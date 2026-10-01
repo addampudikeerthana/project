@@ -1,0 +1,124 @@
+<html>
+<head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.logo h2 {
+    color: #facc15;
+}
+
+.search input {
+    width: 350px;
+    padding: 10px;
+    border-radius: 35px;
+    border: none;
+}
+
+.account a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+nav {
+    background: #374151;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    height: 500px;
+    background: url("../images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <h2>Shop Easy</h2>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Search for Products">
+    </div>
+
+    <div class="account">
+        <a href="#">Login</a>
+        <a href="#">Registration</a>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Big Summer Sale</h1>
+            <p>Up to 70% OFF on Electronics</p>
+            <button>Shop Now</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>@2026 Shop easy. All rights Reserved</p>
+</footer>
+
+</body>
+</html>

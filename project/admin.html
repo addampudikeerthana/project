@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>Fitness Tracker</h1>
+
+        <h3>Admin</h3>
+
+        <button onclick="logout()">Logout</button>
+
+    </div>
+
+    <div class="container">
+
+        <h1>Admin Dashboard</h1>
+
+        <h2>Registered User Details</h2>
+
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Steps</th>
+                <th>Calories</th>
+                <th>Water</th>
+                <th>Weight</th>
+            </tr>
+
+            <tr>
+
+                <td id="adminName"></td>
+
+                <td id="adminEmail"></td>
+
+                <td id="adminSteps"></td>
+
+                <td id="adminCalories"></td>
+
+                <td id="adminWater"></td>
+
+                <td id="adminWeight"></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        showAdminData();
+    </script>
+
+</body>
+</html>

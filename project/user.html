@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>Fitness Tracker</h1>
+
+        <a href="user.html">Home</a>
+
+        <button onclick="logout()">Logout</button>
+
+    </div>
+
+    <div class="container">
+
+        <h1>User Dashboard</h1>
+
+        <h2>Welcome <span id="username"></span></h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Steps</h3>
+                <p id="showSteps">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Calories</h3>
+                <p id="showCalories">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Water</h3>
+                <p id="showWater">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Weight</h3>
+                <p id="showWeight">0</p>
+            </div>
+
+        </div>
+
+        <h2>Enter Fitness Details</h2>
+
+        <form onsubmit="saveFitness(); return false;">
+
+            <label>Steps</label>
+            <input type="number" id="steps" required>
+
+            <label>Calories Burned</label>
+            <input type="number" id="calories" required>
+
+            <label>Water Intake (Litres)</label>
+            <input type="number" id="water" required>
+
+            <label>Weight (kg)</label>
+            <input type="number" id="weight" required>
+
+            <button type="submit">Save Data</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        showUserData();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<head>
+   <style>
+      p{
+        color: blue;
+        font-size: 18px;
+      }
+    </style>
+</head>
+<body>
+    <p>This is Internal CSS</p>
+</body>

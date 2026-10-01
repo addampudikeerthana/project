@@ -1,0 +1,20 @@
+<head>
+    <style>
+        #header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #unique-element {
+            border: 3px solid red;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="header">Welcome</h1>
+    <p id="unique-element">This is a unique element</p>
+</body>

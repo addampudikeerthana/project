@@ -1,0 +1,15 @@
+<head>
+<style>
+    *{
+        color:blue;
+        font-family:Arial;
+        margin:0;
+        padding:0;
+    }
+</style>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p>This is a division.</p>
+    <div>This is a division.</div>
+</body>

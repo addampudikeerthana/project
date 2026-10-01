@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Fitness Tracker</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f5f7fb;
+            color: #222;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: #2563eb;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar h2 {
+            margin-right: auto;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .navbar button {
+            margin-left: 20px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* HOME */
+
+        .home {
+            min-height: 550px;
+            padding: 80px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #eaf1ff;
+        }
+
+        .home-text {
+            width: 55%;
+        }
+
+        .home-text h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .home-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .home-image {
+            width: 35%;
+            background-color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .home-image h1 {
+            font-size: 70px;
+        }
+
+        /* COMMON SECTION */
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            font-size: 32px;
+        }
+
+        .title p {
+            color: #666;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            width: 50%;
+        }
+
+        .about-box {
+            width: 50%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        /* FEATURES */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .feature h3 {
+            color: #2563eb;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        /* AUTH */
+
+        .auth-section {
+            background-color: #eaf1ff;
+        }
+
+        .form-box {
+            background-color: white;
+            width: 400px;
+            max-width: 100%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+
+        .form-box h2 {
+            text-align: center;
+        }
+
+        .form-box label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        .form-box input {
+            width: 100%;
+            padding: 11px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-box button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .form-box p {
+            text-align: center;
+        }
+
+        .form-box a {
+            color: #2563eb;
+        }
+
+        /* DASHBOARD */
+
+        .dashboard {
+            background-color: #f5f7fb;
+        }
+
+        .welcome {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .dashboard-card {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .dashboard-card h3 {
+            color: #555;
+        }
+
+        .dashboard-card p {
+            font-size: 28px;
+            color: #2563eb;
+        }
+
+        .fitness-form {
+            background-color: white;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .fitness-form input {
+            padding: 10px;
+            width: 100%;
+            margin: 8px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .fitness-form button {
+            margin-top: 10px;
+        }
+
+        /* ADMIN */
+
+        .admin-section {
+            background-color: #eef2f7;
+        }
+
+        .admin-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #172033;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #ccc;
+        }
+
+        /* HIDE */
+
+        .hide {
+            display: none;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .navbar a {
+                margin-left: 10px;
+            }
+
+            .home {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .home-text {
+                width: 100%;
+            }
+
+            .home-image {
+                width: 80%;
+                margin-top: 30px;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about-text,
+            .about-box {
+                width: 100%;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .dashboard-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media(max-width: 500px) {
+
+            .feature-grid,
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar a {
+                display: none;
+            }
+
+            .home-text h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <h2>FitTrack</h2>
+
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#features">Features</a>
+
+    <a href="#login">Login</a>
+
+    <a href="#signup">Signup</a>
+
+</div>
+
+
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+    <div class="home-text">
+
+        <h1>
+            Track Your Fitness,
+            Improve Your Life
+        </h1>
+
+        <p>
+            Fitness Tracker is a simple web application
+            that helps users track their daily fitness
+            activities such as steps, calories, water
+            intake and weight.
+        </p>
+
+        <button onclick="goSignup()">
+            Get Started
+        </button>
+
+    </div>
+
+
+    <div class="home-image">
+
+        <h1>💪</h1>
+
+        <h2>Stay Fit</h2>
+
+        <p>
+            Stay Healthy. Stay Active.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="title">
+
+        <h2>About Fitness Tracker</h2>
+
+        <p>
+            Simple fitness monitoring system
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        <div class="about-text">
+
+            <h2>Our Project</h2>
+
+            <p>
+                Fitness Tracker is designed to help
+                users maintain their daily fitness
+                information in one place.
+            </p>
+
+            <p>
+                Users can enter their steps,
+                calories burned, water intake
+                and weight.
+            </p>
+
+            <p>
+                The application stores the data
+                using browser Local Storage.
+            </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <h3>Problem Statement</h3>
+
+            <p>
+                Many people do not regularly track
+                their daily fitness activities.
+                Our Fitness Tracker provides a
+                simple way to record and view
+                important fitness information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section id="features">
+
+    <div class="title">
+
+        <h2>Our Features</h2>
+
+        <p>
+            Main features of Fitness Tracker
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature">
+
+            <h1>👟</h1>
+
+            <h3>Step Tracking</h3>
+
+            <p>
+                Record your daily walking steps.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h1>🔥</h1>
+
+            <h3>Calories</h3>
+
+            <p>
+                Track calories burned.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h1>💧</h1>
+
+            <h3>Water Intake</h3>
+
+            <p>
+                Record your daily water intake.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h1>⚖️</h1>
+
+            <h3>Weight</h3>
+
+            <p>
+                Maintain your weight information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SIGNUP -->
+
+<section class="auth-section" id="signup">
+
+    <div class="title">
+
+        <h2>Create Account</h2>
+
+        <p>
+            Register as a new user
+        </p>
+
+    </div>
+
+
+    <div class="form-box">
+
+        <h2>Signup</h2>
+
+
+        <label>Name</label>
+
+        <input type="text" id="name">
+
+
+        <label>Email</label>
+
+        <input type="email" id="email">
+
+
+        <label>Password</label>
+
+        <input type="password" id="password">
+
+
+        <button onclick="signup()">
+            Create Account
+        </button>
+
+
+        <p>
+            Already have an account?
+            <a href="#login">Login</a>
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- LOGIN -->
+
+<section id="login">
+
+    <div class="title">
+
+        <h2>Login</h2>
+
+        <p>
+            Login to access your dashboard
+        </p>
+
+    </div>
+
+
+    <div class="form-box">
+
+        <h2>User Login</h2>
+
+
+        <label>Email</label>
+
+        <input type="email" id="loginEmail">
+
+
+        <label>Password</label>
+
+        <input type="password" id="loginPassword">
+
+
+        <button onclick="login()">
+            Login
+        </button>
+
+
+        <p>
+            New user?
+            <a href="#signup">Signup</a>
+        </p>
+
+
+        <hr>
+
+
+        <p>
+            <b>Admin Login</b>
+        </p>
+
+        <p>
+            Email: admin@gmail.com
+        </p>
+
+        <p>
+            Password: admin123
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- USER DASHBOARD -->
+
+<section class="dashboard hide" id="userDashboard">
+
+    <div class="welcome">
+
+        <h2>
+            Welcome, <span id="userName"></span>
+        </h2>
+
+        <p>
+            Here you can track your daily fitness.
+        </p>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+
+    <div class="dashboard-cards">
+
+        <div class="dashboard-card">
+
+            <h3>Steps</h3>
+
+            <p id="userSteps">0</p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <h3>Calories</h3>
+
+            <p id="userCalories">0</p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <h3>Water</h3>
+
+            <p id="userWater">0</p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <h3>Weight</h3>
+
+            <p id="userWeight">0</p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="fitness-form">
+
+        <h2>Update Fitness Details</h2>
+
+
+        <label>Steps</label>
+
+        <input type="number" id="steps">
+
+
+        <label>Calories Burned</label>
+
+        <input type="number" id="calories">
+
+
+        <label>Water Intake (Litres)</label>
+
+        <input type="number" id="water">
+
+
+        <label>Weight (kg)</label>
+
+        <input type="number" id="weight">
+
+
+        <button onclick="saveFitness()">
+            Save Fitness Data
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ADMIN -->
+
+<section class="admin-section hide" id="adminDashboard">
+
+    <div class="title">
+
+        <h2>Admin Dashboard</h2>
+
+        <p>
+            Manage and view user fitness information
+        </p>
+
+    </div>
+
+
+    <div class="admin-box">
+
+        <h2>User Details</h2>
+
+
+        <table>
+
+            <tr>
+
+                <th>Name</th>
+
+                <th>Email</th>
+
+                <th>Steps</th>
+
+                <th>Calories</th>
+
+                <th>Water</th>
+
+                <th>Weight</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td id="adminName">
+                    -
+                </td>
+
+                <td id="adminEmail">
+                    -
+                </td>
+
+                <td id="adminSteps">
+                    0
+                </td>
+
+                <td id="adminCalories">
+                    0
+                </td>
+
+                <td id="adminWater">
+                    0
+                </td>
+
+                <td id="adminWeight">
+                    0
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <br>
+
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>Fitness Tracker</h2>
+
+    <p>
+        Simple Fitness Management System
+    </p>
+
+    <p>
+        Developed using HTML, CSS and JavaScript
+    </p>
+
+    <p>
+        © 2026 Fitness Tracker
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* SIGNUP */
+
+function signup() {
+
+    var name =
+        document.getElementById("name").value;
+
+    var email =
+        document.getElementById("email").value;
+
+    var password =
+        document.getElementById("password").value;
+
+
+    if(name == "" ||
+       email == "" ||
+       password == "") {
+
+        alert("Please fill all details");
+
+        return;
+    }
+
+
+    localStorage.setItem("name", name);
+
+    localStorage.setItem("email", email);
+
+    localStorage.setItem("password", password);
+
+
+    alert("Signup Successful");
+
+
+    document.getElementById("name").value = "";
+
+    document.getElementById("email").value = "";
+
+    document.getElementById("password").value = "";
+
+
+    location.href = "#login";
+
+}
+
+
+
+/* LOGIN */
+
+function login() {
+
+    var email =
+        document.getElementById("loginEmail").value;
+
+    var password =
+        document.getElementById("loginPassword").value;
+
+
+    /* ADMIN */
+
+    if(email == "admin@gmail.com" &&
+       password == "admin123") {
+
+        showAdmin();
+
+        return;
+    }
+
+
+    /* USER */
+
+    if(email == localStorage.getItem("email") &&
+       password == localStorage.getItem("password")) {
+
+        showUser();
+
+    }
+
+    else {
+
+        alert("Invalid Email or Password");
+
+    }
+
+}
+
+
+
+/* SHOW USER DASHBOARD */
+
+function showUser() {
+
+    document.getElementById("userDashboard")
+        .classList.remove("hide");
+
+
+    document.getElementById("adminDashboard")
+        .classList.add("hide");
+
+
+    document.getElementById("userDashboard")
+        .scrollIntoView();
+
+
+    showUserData();
+
+}
+
+
+
+/* SHOW ADMIN DASHBOARD */
+
+function showAdmin() {
+
+    document.getElementById("adminDashboard")
+        .classList.remove("hide");
+
+
+    document.getElementById("userDashboard")
+        .classList.add("hide");
+
+
+    document.getElementById("adminDashboard")
+        .scrollIntoView();
+
+
+    showAdminData();
+
+}
+
+
+
+/* SAVE FITNESS DATA */
+
+function saveFitness() {
+
+    var steps =
+        document.getElementById("steps").value;
+
+    var calories =
+        document.getElementById("calories").value;
+
+    var water =
+        document.getElementById("water").value;
+
+    var weight =
+        document.getElementById("weight").value;
+
+
+    if(steps == "" ||
+       calories == "" ||
+       water == "" ||
+       weight == "") {
+
+        alert("Please enter all details");
+
+        return;
+    }
+
+
+    localStorage.setItem("steps", steps);
+
+    localStorage.setItem("calories", calories);
+
+    localStorage.setItem("water", water);
+
+    localStorage.setItem("weight", weight);
+
+
+    alert("Fitness Data Saved Successfully");
+
+
+    showUserData();
+
+}
+
+
+
+/* SHOW USER DATA */
+
+function showUserData() {
+
+    document.getElementById("userName")
+        .innerHTML =
+        localStorage.getItem("name") || "User";
+
+
+    document.getElementById("userSteps")
+        .innerHTML =
+        localStorage.getItem("steps") || 0;
+
+
+    document.getElementById("userCalories")
+        .innerHTML =
+        localStorage.getItem("calories") || 0;
+
+
+    document.getElementById("userWater")
+        .innerHTML =
+        localStorage.getItem("water") || 0;
+
+
+    document.getElementById("userWeight")
+        .innerHTML =
+        localStorage.getItem("weight") || 0;
+
+}
+
+
+
+/* SHOW ADMIN DATA */
+
+function showAdminData() {
+
+    document.getElementById("adminName")
+        .innerHTML =
+        localStorage.getItem("name") || "-";
+
+
+    document.getElementById("adminEmail")
+        .innerHTML =
+        localStorage.getItem("email") || "-";
+
+
+    document.getElementById("adminSteps")
+        .innerHTML =
+        localStorage.getItem("steps") || 0;
+
+
+    document.getElementById("adminCalories")
+        .innerHTML =
+        localStorage.getItem("calories") || 0;
+
+
+    document.getElementById("adminWater")
+        .innerHTML =
+        localStorage.getItem("water") || 0;
+
+
+    document.getElementById("adminWeight")
+        .innerHTML =
+        localStorage.getItem("weight") || 0;
+
+}
+
+
+
+/* GET STARTED */
+
+function goSignup() {
+
+    document.getElementById("signup")
+        .scrollIntoView();
+
+}
+
+
+
+/* LOGOUT */
+
+function logout() {
+
+    document.getElementById("userDashboard")
+        .classList.add("hide");
+
+
+    document.getElementById("adminDashboard")
+        .classList.add("hide");
+
+
+    document.getElementById("home")
+        .scrollIntoView();
+
+}
+
+
+</script>
+
+</body>
+</html>
+```

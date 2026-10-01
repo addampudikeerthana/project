@@ -1,0 +1,20 @@
+<head>
+    <style>
+        h1, h2, p {
+            font-family: Arial;
+            color: blue;
+            margin-bottom: 10px;
+        }
+
+        .box, #footer, p {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heading</h1>
+    <h2>Sub Heading</h2>
+    <p>Paragraph</p>
+</body>

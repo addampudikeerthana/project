@@ -1,0 +1,21 @@
+<head>
+    <style>
+        .box {
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Content 1</div>
+    <div class="box highlight">Content 2 - Highlighted</div>
+    <div class="box">Content 3</div>
+</body>
